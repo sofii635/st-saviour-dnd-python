@@ -14,9 +14,8 @@ if __name__ == '__main__':
     # any buffs / debuffs?
     # any critical success / failure?
 
-    name = input('Name: ')
 
-    print_dramatic_text('Welcome to Marbles!!') 
+    print_dramatic_text('Welcome to Marbles, player.') 
     print_dramatic_text('In this game, you will start with 10 marbles. A number will be randomly rolled on a dice and, before seeing it, you must guess if it is odd or even.')
     print_dramatic_text('If you correctly guess if the number is odd or even, the number rolled will be added to your marble amount')
     print_dramatic_text('However, if you guess incorrectly, the number rolled will be taken from your marble amount.')
@@ -26,21 +25,25 @@ if __name__ == '__main__':
     marbles = 10
     while marbles < 20 and marbles > 0:
         r = random.randint(1, 9)
-        answer = input('odd or even? ')
+        answer = input('Odd or Even? ')
         if answer == 'even' and r % 2 == 0:
-            print_dramatic_text('Correct! the number was ' + str(r))
+            print_dramatic_text('You are....')
+            print_dramatic_text('✅ Correct! the number was ' + str(r))
             marbles += r
-            print('You have ' + str(marbles) + ' marbles')
+            print('You now have ' + str(marbles) + ' marbles.')
         elif answer == 'odd' and r % 2 == 1:
-            print_dramatic_text('Correct! the number was ' + str(r))
+            print_dramatic_text('You are....')
+            print_dramatic_text('✅ Correct! the number was ' + str(r))
             marbles += r
-            print('You have ' + str(marbles) + ' marbles')
+            print('You now have ' + str(marbles) + ' marbles.')
         else:
-            print_dramatic_text('Sorry the number was ' + str(r) + ' ...')
+            print_dramatic_text('You are....')
+            print_dramatic_text('❌ Incorrect. The number was ' + str(r) + ' ...')
             marbles -= r
-            print('You have ' + str(marbles) + ' marbles')
+            print('You now have ' + str(marbles) + ' marbles.')
 
     if marbles >= 20:
-        print_dramatic_text('Congratulations! You have ' + str(marbles) + ' marbles! You win!')
+        print_dramatic_text('Congratulations player! You have ' + str(marbles) + ' marbles!')
+        print_dramatic_text('You have won the game!')
     else:
-        print_dramatic_text('Sorry -- you\'ve run out of marbles! You lose!')
+        print_dramatic_text('Sorry, you\'ve run out of marbles. You are now eliminated.')
